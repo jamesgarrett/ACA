@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ page_title }}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="theme.scss" type="text/css">
+  <link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css" media="screen and (min-width: 768px)">
+
+  <!-- because ie8 ignores media queries, we need this -->
+  <!--[if IE 8]>
+    <link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css">
+  <![endif]-->
+
+
+  <!--[if IE]>
+  <link rel="stylesheet" href="ie.scss" type="text/css">
+  <![endif]-->
+
+  {{ content_for_header }}
+
+  <script type="text/javascript">
+    NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
+  </script>
+
+</head>
+<body class="aware-theme v2-theme {{ page.page_class_name }} js">
+  <div id="pattern" class="pattern">
+    <div class="wrap" id="wrap">
+      <div id="body" class="page-{{ request.template | replace: '_', '-' }}">
+        
+        <div class="nav-width-container">
+          {% include "nav" %}
+                   <div class="social-icons">
+                      <ul class="icon-haus">
+                        
+                                  <a class="fb-link" href="https://www.facebook.com/familystrengtheningnetwork" target="blank"><img src="http://d3n8a8pro7vhmx.cloudfront.net/themes/5356ee0a01925b1c75000001/attachments/original/1405518416/facebook_sprite.png?1405518416" height="50px"width="25px"></a>
+                                  <a class="twitter-link" href="https://twitter.com/njfsn" target="blank"><img src="http://d3n8a8pro7vhmx.cloudfront.net/themes/5356ee0a01925b1c75000001/attachments/original/1405518419/twitter_sprite.png?1405518419" height="50px"width="25px"></a>
+                                  <a class="contribute-link" href="http://www.pinterest.com/NJFSN/"  target="blank"><img src="http://d3n8a8pro7vhmx.cloudfront.net/themes/5356ee0a01925b1c75000001/attachments/original/1405517683/pinterest_sprite.png?1405517683"height="50px"width="25px"></a>
+                        </ul>
+                  </div>
+          
+        </div>
+        
+        <div class="width-container1"></div>
+
+        <div class="header-container clearfix">
+
+          <div class="width-container clearfix">
+
+            {% if page.url == "/about_us" %}
+                <img src="https://d3n8a8pro7vhmx.cloudfront.net/familystrengtheningnetwork/pages/77/attachments/original/1407940725/Foster_care_700x250.jpg?1407940725" width="100%" height="auto">
+
+                <style>
+                  .header-container img
+                    {position: relative; max-height: 400px;}
+                  .site-logo
+                    {position: relative; bottom: 120px; padding: 15px; height: 150px; width: 250px; background: rgba(255,255,255,0.8);}
+                </style>
+
+            {% endif %}
+
+            {% if site.has_meta_image? %}
+              
+
+              <div class="site-logo">
+                <header><a href="/"><img src="{{ site.meta_image_url }}"></a></header>
+              </div>
+
+            {% else %}
+              <header>
+                <h1 class="title"><a href="/">{{ site.long_name }}</a></h1>
+              </header>
+            {% endif %}
+            
+
+          </div>
+          <!-- .width-container -->
+        </div>
+        <!-- .header-container -->
+
+        {% if page.features_count > 0 %}
+          <div class="feature-content-container">
+           {% include "features" %}
+          </div>
+        {% endif %}
+        
+        
+        {% if page.is_homepage? == true %}
+        
+        <!-- .feature-container -->
+        
+        <div class="text-container-1">Strengthening the Family to Thrive Amidst Life's Challenges</div>
+               
+        		
+        <ul class="main_ul">
+
+          <li class="content_container">
+            <h1 class="headline_main">WHO WE ARE</h1>
+            <a href="http://www.familystrengtheningnetwork.org/about_us"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE4MHB4IiBoZWlnaHQ9IjE4MHB4IiB2aWV3Qm94PSIwIDAgMTgwIDE4MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTgwIDE4MCI+DQogIDxnPg0KICAgIDxnPg0KICAgICAgPHBhdGggZD0iTTkwIDE3NC40Yy00Ni41IDAtODQuNC0zNy45LTg0LjQtODQuNEM1LjYgNDMuNSA0My41IDUuNiA5MCA1LjZzODQuNCAzNy45IDg0LjQgODQuNEMxNzQuNCAxMzYuNSAxMzYuNSAxNzQuNCA5MCAxNzQuNHpNOTAgOS42QzQ1LjcgOS42IDkuNiA0NS43IDkuNiA5MHMzNi4xIDgwLjQgODAuNCA4MC40IDgwLjQtMzYuMSA4MC40LTgwLjRTMTM0LjMgOS42IDkwIDkuNnoiIGZpbGw9IiNGRkYiLz4NCiAgICAgIDxwYXRoIGQ9Ik05MCAxNzkuNGMtNDkuMyAwLTg5LjQtNDAuMS04OS40LTg5LjRTNDAuNyAwLjYgOTAgMC42czg5LjQgNDAuMSA4OS40IDg5LjRTMTM5LjMgMTc5LjQgOTAgMTc5LjR6TTkwIDIuNkM0MS44IDIuNiAyLjYgNDEuOCAyLjYgOTBjMCA0OC4yIDM5LjIgODcuNCA4Ny40IDg3LjRzODcuNC0zOS4yIDg3LjQtODcuNEMxNzcuNCA0MS44IDEzOC4yIDIuNiA5MCAyLjZ6IiBmaWxsPSIjRkZGIi8+DQogICAgPC9nPg0KICAgIDxwYXRoIGQ9Ik00NCAxMTAuMmMwLjgtMS40IDEuNC01LjQgMi4xLTguNiAxLjMtNS44IDEuNC0xMC44IDYuNC0xMS4yIC0yLjctNi4zIDAuNS0xMiA1LjMtMTEuOCAzLjkgMC4yIDUuMiAzLjcgNS4zIDcuNSAwLjEgMS43LTEuNiAzLjItMC41IDQuOCAwIDEuNiAyLjcgMC41IDIuNyAyLjEgMS4yIDAuNCAwLjcgMi41IDIuMSAyLjcgMS43LTEwLjQgNi42LTE3LjYgNi40LTI5LjkgMC45LTEuNCAyLjQtMi4yIDMuMi0zLjcgMC41LTIuMy0yLjYtMC45LTIuNy0yLjcgLTAuNi0zLTIuOS0zLjgtMi43LTcgMC4zLTQuMiA1LTcuMiA5LjYtNS45IDEuNi0wLjQgMS40LTIuNSAzLjctMi4xIDMuMSAwLjkgNC4xIDIuOSAzLjcgNS4zIC0wLjQgMi44LTQuMiAyLjEtNC4zIDQuOCAyLjggMC40IDQuMiAyLjIgNS4zIDQuMyAzLjMgMC4zIDUgMi4xIDUuOSAzLjcgMC4yIDAuNCAwLjkgMS4yIDEuMSAxLjYgMS44IDQuMyAwIDEwLjUgMy4yIDEzLjkgMC41LTguOCA0LTE0LjUgMy43LTI0LjEgMC45LTEuOCA1LjQtMi4yIDUuOS00LjggMC40LTItMC4yLTMuMS0yLjEtNC44IDAuOS0yLjgtMS42LTQuNy0xLjEtOCAwLjUtMy4xIDMuMi00LjIgNS4zLTUuOSAwLjkgMCAxLjggMCAyLjcgMCAyIDEuNiA0LjUgMi43IDUuOSA0LjggLTAuMSAxLjYgMC4xIDIuMyAwIDMuNyAtMC4xIDAuOS0wLjcgMi40LTAuNSAzLjIgMC4xIDAuNSAxLjEgMC44IDEuNiAxLjYgMSAxLjcgMC43IDIuMiAyLjcgMy43IDEuNCAxLjEgNC4yIDMgNi40IDMuNyAzLjIgNi43IDMuNyAxNi4zIDUuMyAyNC42IDAgMC41IDAgMS4xIDAgMS42IC0xIDQuNy0xLjEgMTAuMy0xLjEgMTYgLTEuNiAwLjgtMy42IDMuMi01LjMgMi4xIC0xLjItMS4zIDEuMi0yIDAuNS00LjMgLTEgMC4xLTAuMyAxLjgtMS4xIDIuMSAtMS4xLTEuNy0wLjQtNC42IDAuNS02LjQgMC4zLTAuNSAxLTAuOSAxLjEtMS42IDAuMi0xLjUtMC40LTMuNS0wLjUtNS4zIC0wLjUtNS4xLTAuMi05LjUtMi4xLTEyLjggLTEuMSAxMC4yIDAgMjEuMy0wLjUgMzMuMSAtMC4zIDUuOS0xLjMgMTIuNi0xLjYgMTguNyAtMC4yIDQuOSAwLjMgMTAtMC41IDEzLjQgLTAuMyAxLjMtMi42IDMuMi0yLjcgNS4zIC0wLjEgMi4xIDIuMyAzLjkgMS42IDUuOSAtMi40IDAuMi00LjggMS4xLTcgMCAtMC44LTIuOS00LTkuMS0wLjUtMTEuMiAtMS40LTQuOCAwLjEtOS4yIDEuMS0xMy45IDAuMi0wLjggMC41LTIuMiAwLjUtMi43IDAtMS4zLTAuOC0yLTEuMS0zLjIgLTAuOS00LjMgMC4xLTkuMS0xLjEtMTQuNCAtMC43IDAuNi0wLjcgMS4zLTEuMSAyLjEgLTAuMyAwLjgtMC45IDEuNS0xLjEgMi4xIC0xLjEgMy42LTAuMiA4LjUtMy43IDkuNiAwLjQgMi44IDEuMiA1LjQgMS4xIDkuNiAwIDAuOC0wLjYgMi4zLTAuNSAyLjcgMC40IDIuMiAyLjMgMyAyLjEgNC44IC0wLjIgMi0xLjQgMy0yLjcgNC4zIDAgNC43LTMgOS04IDcgLTAuMS0zLjcgMS42LTUuNiAyLjctOCAwLjQtMS40LTEuMS0xLTEuNi0xLjYgMS0yLjYtMC45LTQuOC0xLjEtNy41IC0wLjEtMS43IDAuNS0zLjIgMC41LTQuOCAwLTEtMC41LTIuMy0wLjUtMy4yIC0wLjEtMS44IDAuNS0zLjQgMC41LTUuMyAwLTEuOS0wLjctMy42LTAuNS01LjMgMC40LTMuMyAyLjItNi4yIDEuNi05LjYgLTAuNC0xLjQtMS45IDEuNS0yLjcgMCAtMC4xLTAuNi0wLjItMS4yLTAuNS0xLjYgLTAuMS0wLjEtMS4xLTAuNi0xLjEtMC41IC0wLjgtMS42IDAtMy45LTAuNS01LjMgLTEuNy00LjQtNi4xLTcuNS01LjktMTMuNCAtMS4zIDEuMi0yLjIgNC4zLTIuMSA3IDAgMi4zIDEuMyA0LjcgMS42IDYuOSAwLjQgMy4xIDAuMyA2LjMgMCA5LjYgLTAuMyAzLjItMS41IDYuNi0xLjYgMTAuMiAwIDEuMiAwLjQgMi42IDAuNSAzLjcgMC4yIDIuOS0wLjQgNS45IDAgOS4xIDAuMyAyLjMgMC45IDcuNiAwLjUgMTEuMiAtMC40IDMuNy0yLjEgNy0yLjEgMTAuNyAtMi4zIDAuOS00IDIuNC03LjUgMi4xIC0wLjQtMC42LTAuNy0xLjQtMC41LTIuNyAtMC41LTAuOS0yLjUtMC40LTIuNy0xLjYgMC42LTQuMyAxLjMtOS40IDAuNS0xNS41IC0wLjItMS44LTEuMy0zLjYtMS42LTUuMyAtMC4yLTEuNSAwLjEtMy4zIDAtNC44IC0wLjMtMy4yLTEuNy02LjQtMi43LTkuNiAtMS40LTQuNy0yLjMtOC42LTIuMS0xNSAtMS41IDEuMi0xLjQgNC0yLjcgNS4zIDAuNyAxLjQgMS4zIDMgMS4xIDUuMyAtMiAyLjItNiAyLjYtNy41IDAgMC40IDMuNiAxLjEgNy4xIDAuNSAxMC43IC0wLjIgMS4yLTEuMyAxLjctMS42IDIuNyAtMC40IDEuMi0wLjEgMy4yLTAuNSA0LjggLTAuNCAxLjQtMS41IDMuNC0xLjYgNS4zIC0wLjEgMS44IDEuMiA3IDEuMSA5LjYgLTAuMSAxLjQtMSAyLjgtMS4xIDQuMyAtMC4xIDIuMSAwLjggNC41IDAuNSA2LjQgMCAwLTAuOSAwLjItMC41IDAuNSAtMS4yIDAtMi41IDAtMy43IDAgLTEuMi0yLjUtMy41LTUuNS0xLjYtOCAtMC45LTEuNy0xLjQtMy41LTEuNi01LjMgLTAuMi0xLjggMC45LTEuNSAwLTMuMiAtMC4yLTAuNC0xLTAuOC0xLjEtMS4xIC0wLjItMC42IDAuMi0xLjUgMC0yLjEgLTAuMS0wLjMtMS0wLjktMS4xLTEuMSAtMC40LTEuMS0wLjMtMi42LTAuNS0zLjcgLTAuNy0zLTIuNy02LTMuMi05LjYgLTEuNiAxLTEuNiA1LjYtNC4zIDMuN0M0NCAxMTMuNCA0NCAxMTEuOCA0NCAxMTAuMnpNMTc0LjQgOTBjMC00Ni41LTM3LjktODQuNC04NC40LTg0LjRTNS42IDQzLjUgNS42IDkwYzAgNDYuNSAzNy45IDg0LjQgODQuNCA4NC40UzE3NC40IDEzNi41IDE3NC40IDkwek0xNzAuNCA5MGMwIDQ0LjMtMzYuMSA4MC40LTgwLjQgODAuNFM5LjYgMTM0LjMgOS42IDkwIDQ1LjcgOS42IDkwIDkuNiAxNzAuNCA0NS43IDE3MC40IDkwek0xNzkuNCA5MGMwLTQ5LjMtNDAuMS04OS40LTg5LjQtODkuNFMwLjYgNDAuNyAwLjYgOTBzNDAuMSA4OS40IDg5LjQgODkuNFMxNzkuNCAxMzkuMyAxNzkuNCA5MHpNMTc3LjQgOTBjMCA0OC4yLTM5LjIgODcuNC04Ny40IDg3LjRTMi42IDEzOC4yIDIuNiA5MEMyLjYgNDEuOCA0MS44IDIuNiA5MCAyLjZTMTc3LjQgNDEuOCAxNzcuNCA5MHoiIHN0eWxlPSJjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsLXJ1bGU6ZXZlbm9kZDtmaWxsOiNGRkYiLz4NCiAgPC9nPg0KPC9zdmc+DQo="></a>
+            <p class="description_main">We are a non-profit organization offering free services for families. Our mission is to provide holistic, prevention based support for families.</p>
+          </li>
+            
+          <li class="content_container">
+             <h1 class="headline_main">WHAT WE DO</h1>
+            <a href="http://www.familystrengtheningnetwork.org/mission"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE4MHB4IiBoZWlnaHQ9IjE4MHB4IiB2aWV3Qm94PSIwIDAgMTgwIDE4MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTgwIDE4MCI+DQogIDxnPg0KICAgIDxnPg0KICAgICAgPHBhdGggZD0iTTEwOSA0NC4zYzAuMi0wLjctMC4zLTIuMiAwLjMtMi41IDguNS0wLjEgMTYtMC4xIDI0LjMgMCAtMC4xIDguMiAwLjMgMTUuNiAwLjMgMjQgMCAxLjItMC41IDIuMy0wLjMgMy4zIDAuNCAxLjggMy4zIDQuMiA1LjIgNi4zIDEuNiAxLjcgNC44IDMuNCA1LjUgNS43IDAuNyAyLjYgMCA1LjggMCA4LjUgMCAyLjUgMC4yIDUtMC4zIDcuOSAtMi4yIDAtNC40IDAtNi41IDAgLTAuNyAxMy4zIDAuMyAyNy41LTAuNSA0MS4yIC0zLjQgMS40LTcuNCAwLjgtMTEuMiAwLjggLTIzLjEgMC00Ny42IDAtNzEuMiAwIC0zLjYgMC03LjYgMC42LTEwLjktMC44IC0xLTMuMS0wLjUtNi42LTAuNS0xMC4xIDAtMTAgMC0yMC45IDAtMzEuMSAtMi4zIDAtNC41IDAtNi44IDAgMC40LTMuNi0xLjQtMTEuMy0wLjMtMTYuMSAwLjUtMi4xIDQuNC00LjggNi41LTcuMSAxMS4xLTExLjkgMjEuOS0yMy4yIDMzLTM0LjQgNC41LTQuNSA4LjUtOS4zIDEzLjEtMTMuNiAyLjItMi4xIDQuOSAxLjggNi41IDMuNUM5OS43IDM0LjggMTA0LjkgMzkuNyAxMDkgNDQuM3pNMTM3LjEgODMuNUMxMjEuNSA2Ny4yIDEwNS44IDUxIDkwLjIgMzQuN2MtMC41IDAtMC42IDAuNi0wLjggMC44IC0xMi40IDEyLjYtMjcuOCAyOC00MC42IDQyIC0yIDIuMi01LjMgNC45LTUuNyA2LjMgLTAuNiAyIDAuNCA0LjkgMCA2LjUgMi4zIDAgNC41IDAgNi44IDAgMCAxNCAwIDI4IDAgNDIgOS40IDAgMTguNyAwIDI4LjEgMCAwLjItMTAuNC0wLjQtMjEuNSAwLjMtMzEuNCA4IDAgMTYgMCAyNCAwIDAgMTAuNSAwIDIwLjkgMCAzMS40IDkuNCAwIDE4LjcgMCAyOC4xIDAgLTAuMS0xNC0wLjEtMjguNCAwLTQyIDIgMC40IDQuMi0wLjIgNi44IDBDMTM3LjEgODguMSAxMzcuMSA4NS44IDEzNy4xIDgzLjV6TTExNi4xIDU1LjRjMi44IDMgNi42IDYuOSA5LjUgOS41IDAgMCAwLjggMS43IDEuMSAwLjUgMC01LjYgMC0xMS4zIDAtMTYuOSAtMy41IDAtNy4xIDAtMTAuNiAwQzExNi4xIDUwLjkgMTE2LjEgNTMuMiAxMTYuMSA1NS40ek05MS44IDEyMmMxLjItMC4xIDIuOCAwLjMgMy41LTAuMyAwLTIuMyAwLTQuNSAwLTYuOCAtMS4yIDAtMi40IDAtMy41IDBDOTEuOCAxMTcuMyA5MS44IDExOS42IDkxLjggMTIyeiIgc3R5bGU9ImNsaXAtcnVsZTpldmVub2RkO2ZpbGwtcnVsZTpldmVub2RkO2ZpbGw6I0ZGRiIvPg0KICAgICAgPHBhdGggZD0iTTc3LjYgNjYuMWMzLjUgMCA3LjEgMCAxMC42IDAgMCAzLjUgMCA2LjkgMCAxMC40IC0zLjcgMC4xLTcuMyAwLjItMTAuNiAwQzc3LjYgNzMgNzcuNiA2OS41IDc3LjYgNjYuMXoiIHN0eWxlPSJjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsLXJ1bGU6ZXZlbm9kZDtmaWxsOiNGRkYiLz4NCiAgICAgIDxwYXRoIGQ9Ik05MS44IDY2LjFjMy41IDAgNy4xIDAgMTAuNiAwIDAgMy41IDAgNi45IDAgMTAuNCAtMy40IDAuMi02LjkgMC4xLTEwLjYgMEM5MS44IDczIDkxLjggNjkuNSA5MS44IDY2LjF6IiBzdHlsZT0iY2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkZGIi8+DQogICAgICA8cGF0aCBkPSJNODguMyA4MGMwIDMuNSAwIDcuMSAwIDEwLjYgLTMuNS0wLjItNy42IDAuMy0xMC42LTAuMyAwLTMuNCAwLTYuNyAwLTEwLjFDODAuNiA3OS42IDg0LjggODAuMiA4OC4zIDgweiIgc3R5bGU9ImNsaXAtcnVsZTpldmVub2RkO2ZpbGwtcnVsZTpldmVub2RkO2ZpbGw6I0ZGRiIvPg0KICAgICAgPHBhdGggZD0iTTEwMi40IDgwYy0wLjIgMy41IDAuMyA3LjYtMC4zIDEwLjYgLTMuNSAwLTYuOSAwLTEwLjQgMCAwLTMuNSAwLTcuMSAwLTEwLjZDOTUuNCA4MCA5OC45IDgwIDEwMi40IDgweiIgc3R5bGU9ImNsaXAtcnVsZTpldmVub2RkO2ZpbGwtcnVsZTpldmVub2RkO2ZpbGw6I0ZGRiIvPg0KICAgIDwvZz4NCiAgICA8Zz4NCiAgICAgIDxwYXRoIGQ9Ik05MCAxNzQuNGMtNDYuNSAwLTg0LjQtMzcuOS04NC40LTg0LjRDNS42IDQzLjUgNDMuNSA1LjYgOTAgNS42czg0LjQgMzcuOSA4NC40IDg0LjRDMTc0LjQgMTM2LjUgMTM2LjUgMTc0LjQgOTAgMTc0LjR6TTkwIDkuNkM0NS43IDkuNiA5LjYgNDUuNyA5LjYgOTBzMzYuMSA4MC40IDgwLjQgODAuNCA4MC40LTM2LjEgODAuNC04MC40UzEzNC4zIDkuNiA5MCA5LjZ6IiBmaWxsPSIjRkZGIi8+DQogICAgICA8cGF0aCBkPSJNOTAgMTc5LjRjLTQ5LjMgMC04OS40LTQwLjEtODkuNC04OS40UzQwLjcgMC42IDkwIDAuNnM4OS40IDQwLjEgODkuNCA4OS40UzEzOS4zIDE3OS40IDkwIDE3OS40ek05MCAyLjZDNDEuOCAyLjYgMi42IDQxLjggMi42IDkwYzAgNDguMiAzOS4yIDg3LjQgODcuNCA4Ny40czg3LjQtMzkuMiA4Ny40LTg3LjRDMTc3LjQgNDEuOCAxMzguMiAyLjYgOTAgMi42eiIgZmlsbD0iI0ZGRiIvPg0KICAgIDwvZz4NCiAgPC9nPg0KPC9zdmc+DQo=" width="175px"></a>
+          	<p class="description_main">We offer resources, support, and workshops on a wide variety of topics ranging from personal finances, to relationships, to careers and more.</p>
+          </li>
+            
+          <li class="content_container">
+             <h1 class="headline_main">GET INVOLVED</h1>
+            <a href="http://www.familystrengtheningnetwork.org/connect"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE4MHB4IiBoZWlnaHQ9IjE4MHB4IiB2aWV3Qm94PSIwIDAgMTgwIDE4MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTgwIDE4MCI+DQogIDxnPg0KICAgIDxwYXRoIGQ9Ik04NC45IDM3YzAuNiAwIDEuMSAwIDEuNyAwIDcuNyAxIDUuNCAxNC41IDUuNCAyNS4zIDAgMy41IDAgNy41IDAgMTEuOCAwIDMuNy0wLjggOS45IDEuOSA5LjkgMi45IDAuMSAyLjEtNS43IDIuMS05LjMgMC0zLjggMC04LjUgMC0xMS40IDAtNy41LTEuMi0xNy43IDIuMS0yMC43IDMtMi44IDguNi0xLjIgOS45IDIuNSAwLjggMi4zIDAuMiA3LjIgMC4yIDExIDAgOC41IDAgMTMuNyAwIDIyLjggMCA0LjEtMC45IDkuMyAyLjMgOS4xIDIuMy0wLjEgMS45LTMuMSAxLjktNi42IDAtMyAwLTYuNCAwLTguNSAwLTUuNC0wLjktMTIuOCAwLjYtMTYuMiAxLjktNCA5LjMtNC40IDExLjIgMC4yIDEuMiAyLjggMC40IDEwLjIgMC40IDE0LjcgMCAxNS41IDAuOSAyOS45IDAgNDQuOCAtMS4xIDE3LjItMTEuNCAyNC45LTI4LjIgMjYuNyAtMiAwLTYuMi0wLjItNi40LTAuMiAtMTEuMi0wLjQtMjAuNi01LTI2LjMtMTIgLTIuMi0yLjctNC01LjgtNS44LTguNSAtNC02LTcuMS0xMS4zLTExLjItMTcuNCAtMS45LTIuOC00LjktNi01LjQtOS4xIC0wLjktNS4yIDMuMi0xMC4yIDkuMy04LjUgMy4xIDAuOSA1LjEgNC40IDcgNyAxLjYgMi4xIDMgNC4zIDQuNCA2LjIgMC40IDAuNiAxLjIgMS42IDEuNSAxLjIgMC0xNC4xIDAtMjYuMiAwLTQwIDAtOC4yLTEuMy0xOC40IDcuNy0xNi42IDYuNSAxLjMgNC42IDEzLjMgNC42IDIxLjUgMCAyLjkgMCA1LjcgMCA5LjUgMCAzLjMtMC42IDcuNyAyLjEgNy43IDIuNyAwIDIuMS01LjEgMi4xLTkuMSAwLTguOCAwLTE0LjQgMC0yMi42Qzc5LjcgNDQuNiA3OC43IDM3LjggODQuOSAzN3oiIHN0eWxlPSJjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsLXJ1bGU6ZXZlbm9kZDtmaWxsOiNGRkYiLz4NCiAgICA8cGF0aCBkPSJNOTAgMTc0LjRjLTQ2LjUgMC04NC40LTM3LjktODQuNC04NC40QzUuNiA0My41IDQzLjUgNS42IDkwIDUuNnM4NC40IDM3LjkgODQuNCA4NC40QzE3NC40IDEzNi41IDEzNi41IDE3NC40IDkwIDE3NC40ek05MCA5LjZDNDUuNyA5LjYgOS42IDQ1LjcgOS42IDkwczM2LjEgODAuNCA4MC40IDgwLjQgODAuNC0zNi4xIDgwLjQtODAuNFMxMzQuMyA5LjYgOTAgOS42eiIgZmlsbD0iI0ZGRiIvPg0KICAgIDxwYXRoIGQ9Ik05MCAxNzkuNGMtNDkuMyAwLTg5LjQtNDAuMS04OS40LTg5LjRTNDAuNyAwLjYgOTAgMC42czg5LjQgNDAuMSA4OS40IDg5LjRTMTM5LjMgMTc5LjQgOTAgMTc5LjR6TTkwIDIuNkM0MS44IDIuNiAyLjYgNDEuOCAyLjYgOTBjMCA0OC4yIDM5LjIgODcuNCA4Ny40IDg3LjRzODcuNC0zOS4yIDg3LjQtODcuNEMxNzcuNCA0MS44IDEzOC4yIDIuNiA5MCAyLjZ6IiBmaWxsPSIjRkZGIi8+DQogIDwvZz4NCjwvc3ZnPg0K" width="175px"></a>
+            <p class="description_main">We provide opportunities for families to volunteer together, and well as a wide range of workshops and activities for families to participate in.</p>
+          </li>
+        
+        </ul>
+        
+ 	<div class="width-container3">
+          <ul class="home-button-holder">
+            
+            <li class="buttonbutton">{% if site.has_button1? %}
+    				<a class="button supporter-nav-button" href="{{ site.button1_page.full_url_with_profile_recruiter }}">{{ site.button1_text }}</a>
+              {% endif %}</li>
+          
+    				</ul>
+        </div>
+            
+            <style>.main-container{display:block;}</style>
+        
+       {% endif %}
+
+       <div class="width-container">
+            
+            {% if page.has_parent? == true %}
+            	
+            			{% include "breadcrumbs" %}
+            
+            {% elsif page.has_subnav? == true %}
+            
+            			{% include "breadcrumbs" %}
+            
+            {% endif %}
+
+          </div>
+            
+				{% if page.is_homepage? == true %}
+        <style>.main-container{height:15px;}</style>
+        {% endif %}
+        
+        <div class="width-container5">
+        <div class="main-container" id="middle">
+          <div class="main width-container clearfix">
+            
+
+            {% if request.is_sidebar? %}
+            {% include "columns_2" %}
+            {% else %}
+            {% include "columns_1" %}
+            {% endif %}
+
+          </div>
+          <!-- .main -->
+        </div>
+        <!-- .main-container -->
+        </div>
+        <!-- .width-container2 -->
+            
+        <div class="width-container4">
+          <footer class="clearfix">
+            {{content_for_footer}}
+         				<div class="width-container">
+            <div class="footer-box">
+              <p style="letter-spacing:2px;line-height:15px;">The Family <br> Strengthening <br> Network</p>
+              <p style="font-weight:300;font-size:10px;line-height:13px;">PO Box 591<br>
+							Elmer, NJ<br>
+							08318<br>
+              856-243-5810<br>
+                <a href="mailto:contact.fsn@gmail.com?Subject=Hello%20Family%20Strengthening%20Network" style="color:#FCAB21;" target="_top">
+contact.fsn@gmail.com</a>
+              </div>
+							
+            	<div class="nationbuilder-link">
+									<a href="http://nationbuilder.com/"><img src="http://d3n8a8pro7vhmx.cloudfront.net/themes/5319d67001925b3904000001/attachments/original/1394495404/nationbuilder_logo1.png?1394495404"></a>
+              </div>
+            
+            	<div class="nationbuilder-link">
+									<a href="http://www.jamesgarrett.co"><img src="http://d3n8a8pro7vhmx.cloudfront.net/themes/5356ee0a01925b1c75000001/attachments/original/1400349211/newlogo_4_13.png?1400349211" width="50px"></a>
+              </div>
+                
+          </footer>
+        </div>
+         </div> 
+        <!-- .width-container -->
+
+      </div>
+      <!-- #body -->
+    </div>
+    <!-- #wrap -->
+  </div>
+  <!-- #pattern -->
+
+{% if site.has_background_image? %}
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="/javascripts/jquery.backstretch.min.js"></script>
+  <script type="text/javascript">
+    jQuery.backstretch("{{ site.background_image_url }}", {speed: 0});
+  </script>
+  <![endif]-->
+  <style>
+  	body {
+      background: url('{{ site.background_image_url }}') repeat center center fixed;
+      width:100%;
+    }
+</style>
+{% endif %}
+</body>
+</html>
